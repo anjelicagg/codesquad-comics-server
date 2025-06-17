@@ -48,3 +48,14 @@ app.get("/api/books/delete/:id",(request,response)=>{
 app.listen(PORT,()=>{
     console.log(`The server is listening on http://localhost:3000/ ${PORT}`)
 })
+
+//CP-SERVER-2 PT-1//
+app.use()
+const bookRoutes= req("/api/books",(req,res,next)=>{
+   res 
+   .status(200)
+   .json({success:{message:"This route points to the Home page"}});
+return
+})
+
+use()

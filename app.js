@@ -8,6 +8,7 @@ const morgan = require("morgan")
 const helmet = require("helmet")
 const cors = require("cors")
 const path= require("node:path")
+const { request } = require("node:http")
 
 app.use(morgan("combined"))
 app.use(helmet)
@@ -51,11 +52,11 @@ app.listen(PORT,()=>{
 
 //CP-SERVER-2 PT-1//
 app.use()
-const bookRoutes= req("/api/books",(req,res,next)=>{
+const bookRoutes=("/api/books",(req,res,next)=>{
    res 
    .status(200)
    .json({success:{message:"This route points to the Home page"}});
 return
 })
 
-use()
+module.exports()

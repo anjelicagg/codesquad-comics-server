@@ -1,6 +1,9 @@
-//ROUTES
 const express = require("express")
 const router =express.router()
+const { getAllbooks,getBook,createBook,updateBook,deleteBook }  = require ("../controllers/bookController");
+
+//ROUTES
+
 app.get("/",(request,response)=>{
     // response.send("This route points to the Home page")
     response.status().json({success:{message:"Success"},
@@ -8,33 +11,28 @@ app.get("/",(request,response)=>{
     })
 });
 
-app.get("/.",(request,response)=>{
+app.get("/.",(getAllbooks)=>{
     // response.send("This will send all of the book data")
     response.status().json({
         success:{message:"Success"},
     })
 });
 
-app.get("/:id",(request,response)=>{
+app.get("/:id",(updateBook)=>{
     // response.send("This will update a book by its id")
     response.status().json({
         success:{message:"Success"},
     })
 });
 
-app.post("/create/new",(request,response)=>{
+app.post("/create/new",(createBook)=>{
     // response.send("This will delete a book by its id")
     response.status().json({
         success:{message:"Success"},
     })
 });
-app.put("/update/:id",(request,response)=>{
-    // response.send("This will delete a book by its id")
-    response.status().json({
-        success:{message:"Success"},
-    })
-});
-app.delete("/delete/:id",(request,response)=>{
+
+app.delete("/delete/:id",(deleteBook)=>{
     // response.send("This will delete a book by its id")
     response.status().json({
         success:{message:"Success"},

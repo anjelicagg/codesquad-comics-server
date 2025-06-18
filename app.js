@@ -1,7 +1,8 @@
 const express = require("express")
 const app= express()
 const PORT=8080
-
+const bookRoutes = require("./routes/bookRoutes");
+const authRoutes = require("./routes/authRoutes")
 //MIDDLEWARE//
 
 const morgan = require("morgan")
@@ -58,5 +59,5 @@ const bookRoutes=("/api/books",(req,res,next)=>{
    .json({success:{message:"This route points to the Home page"}});
 return
 })
-
+app.use("/api",authRoutes)
 module.exports()

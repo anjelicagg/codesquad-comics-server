@@ -1,7 +1,7 @@
 const express = require("express")
-const router =express.router()
+const router =express.Router()
 
-const { register, login, logout, localLogin } = require("../controllers/authControllers");
+const { register, login, logout, localLogin } = require("../controllers/authController");
 
 //Replace all the routes with the proper functions AND corresponding CRUD operations (GET/PUT/POST/DELETE). There should be six routes in total.
 //register - post

@@ -1,4 +1,4 @@
-
+const users[];
  const register = async(req,res,next)=> {
       const {firstName,lastName,username,password}=request.body;
          console.log(register);
@@ -10,22 +10,20 @@
             username:"",
             password:"",
     };
-    console.log(newUser);
+    console.log(newUser,"New user registered");
      
-   
-     const newUser = require("../routes/authRoutes");
-     const login = async( req,res,next)=>{
+    
         res.status(201).json({
             success:{ message: "User logged in"},
             data: {newUser},
-            statusCode:(201),
-        });
-    } catch (error){
-        return res.response(400).json({
-            error: {message:"Internal server error!"},
-            statusCode:500,
-        });
-      };
+            statusCode:(201),});
+        }catch(error){
+            next(error)
+        };
+
+      const login = async( req,res,next)=>{
+        const {username,password}=req.body   
+    }; 
 const logout = async (req,res,next)=>{
    res.status(200).json({
     success:{message:"Initializing logout controller logic..."},
@@ -40,7 +38,7 @@ console.log("Logout function activate.Logging out")
 };
 const localLogin= async (req,res,next)=>{
     let result = true
-    const user=userRoster;
+    const user=users;
     console.log(user,"before");
     userCopy=user;
     console.log(userCopy, "copy of user ");
@@ -58,6 +56,6 @@ const localLogin= async (req,res,next)=>{
             success:{message: "Login successful"},
             data:{user,new},
         })
-}
 };
-module.exports(register,logout,login,localLogin)
+}
+module.exports={register,login,logout}

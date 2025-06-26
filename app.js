@@ -9,7 +9,7 @@ const morgan = require("morgan")
 const helmet = require("helmet")
 const cors = require("cors")
 const path= require("node:path")
-const { request } = require("node:http")
+
 
 app.use(morgan("combined"))
 app.use(helmet)
@@ -46,18 +46,13 @@ app.get("/api/books/delete/:id",(request,response)=>{
         success:{message:"Success"},
     })
 });
-
-app.listen(PORT,()=>{
-    console.log(`The server is listening on http://localhost:3000/ ${PORT}`)
-})
-
 //CP-SERVER-2 PT-1//
-app.use()
-const bookRoutes=("/api/books",(req,res,next)=>{
-   res 
-   .status(200)
-   .json({success:{message:"This route points to the Home page"}});
-return
-})
 app.use("/api",authRoutes)
+app.listen(PORT,()=>{
+    console.log(`The server is listening on http://localhost: ${PORT}`)
+});
+
+
+
+
 module.exports()

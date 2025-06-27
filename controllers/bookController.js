@@ -1,10 +1,12 @@
+
  const { privateDecrypt } = require("crypto");
 const booksData =require("data/books.js")
 
 
 const getAllbooks=async((req,res,next) => { 
     try {
-        const books=booksData
+        // const books=booksData
+      
         return res.status(200).json({
         success:{message:""},
         data:books
@@ -40,6 +42,7 @@ try{
     author,
     publisher,
     genre,
+    pages,
     rating,
     synopsis,
     imageURL,
